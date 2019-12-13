@@ -1,0 +1,679 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ltr">
+<head>
+    <title> Hayrat Yardım Derneği </title>
+    <meta name="theme-color" content="#eeb944">
+    <meta name="msapplication-navbutton-color" content="#eeb944">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta http-equiv="refresh" content="30000" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="title" content="Hayrat Yardım Derneği" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:title" content="">
+
+    <meta property="og:url" content="https://www.hayratyardim.org/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="Hayrat Yardım Derneği">
+    <meta property="article:author" content="https://www.facebook.com/">
+    <meta property="article:publisher" content="https://www.facebook.com/">
+
+    <meta itemprop="name" content="">
+
+
+    <link rel="shortcut icon" href="/Project/Hayrat/favicon.ico">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
+    <link rel="stylesheet" href="/Project/resource/style.css" />
+    <script type="text/javascript" src="/Project/cdn/jquery/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/Project/resource/script/global.js"></script>
+    <link href="/Project/cdn/jquery/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/Project/cdn/jquery/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/Project/cdn/script/jquery.hoverIntent.min.js"></script>
+    <script type="text/javascript" src="/Project/cdn/script/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Project/resource/script/lang.en.js"></script>
+    <script type="text/javascript" src="/Project/cdn/script/jquery.mask.js"></script>
+    <link rel="stylesheet" href="/Project/cdn/lightbox/jquery.lightbox.css">
+    <script type="text/javascript" src="/Project/cdn/lightbox/jquery.lightbox.js"></script>
+    <script type="text/javascript" src="/Project/resource/script/web.js"></script>
+    <script type="text/javascript" src="https://static.criteo.net/js/ld/ld.js" async></script>
+    <script type="text/javascript" src="https://js.bkmexpress.com.tr/v1/javascripts/bex.js"></script>
+    <script type="text/javascript" src="/Project/resource/script/criteo.js"></script>
+    <script type="text/javascript" src="/Project/resource/script/jquery.scrolldepth.min.js"></script>
+    <script type="text/javascript" src="/Project/resource/smartbanner/jquery.smartbanner.js"></script>
+    <script defer type="text/javascript" src="/Project/cdn/fontawesome/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai&subset=latin-ext,tamil" rel="stylesheet">
+    <meta name="viewport" content="width=980">
+    <link rel="stylesheet" href="/Project/resource/image-picker/image-picker.css" />
+    <script type="text/javascript" src="/Project/resource/image-picker/image-picker.js"></script>
+    
+    
+    <link rel="stylesheet" href="/Project/cdn/swiper/swiper.min.css">
+    <link rel="stylesheet" href="/Project/resource/slider.css">
+    <script type="text/javascript" src="/Project/cdn/swiper/swiper.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $rtl = $("body").attr("dir") === "rtl";
+
+            if ($.fn.swiper !== undefined) {
+                var swiper = new Swiper('#swiper', {
+                    nextButton: '#swiper-next',
+                    prevButton: '#swiper-prev',
+                    spaceBetween: 0,
+                    onSlideChangeStart: function (swiper) {
+                        $("#slide-nav .css-selected").removeClass("css-selected");
+                        $("#slide-nav li:nth-child(" + (swiper.activeIndex + 1) + ")").addClass("css-selected");
+                    }
+                });
+
+                $("#slide-nav li").click(function () {
+                    swiper.slideTo($(this).index());
+                });
+            }
+
+            if ($.fn.hoverIntent !== undefined) {
+                $("#tabs > li").hoverIntent(function (e) {
+                    var o = $("#tabs .css-selected").index() + 1;
+                    var n = $(this).index() + 1;
+
+                    if (o == n) return;
+
+                    $("#tabs li.css-selected").removeClass("css-selected");
+                    $(this).addClass("css-selected");
+
+                    $("#news > li:nth-child(" + o + ")").hide();
+                    $("#news > li:nth-child(" + n + ")").animate({ height: "toggle" }, 250);
+                });
+            }
+
+            $("#logo-list").width($("#logo-list > a").length * 222).show();
+
+            $mx = $("#logo-list").outerWidth();
+            $fx = 880;
+            $px = $rtl ? $mx - $fx : 0;
+
+            $("#logo-next, #logo-prev").click(function () {
+                if ($px >= $mx - $fx) {
+                    $px -= $fx;
+                    if ($mx - $fx < $px * -1) $px = 0;
+                } else {
+                    $px += $fx;
+                    if ($mx - $fx < $px) $px = $mx - $fx;
+                }
+
+                $("#logo-slider").animate({ scrollLeft: $px }, 500);
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">$(document).ready(function () {
+        $(".css-headertext").css("cursor", "pointer");
+
+        $(document).on("click", ".css-headertext", function () {
+            window.location = '/en/news/to-the-attention-of-those-who-would-like-to-donate-from-abroad-2549';
+        });
+    });
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79679930-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('require', 'linkid');
+  ga('send', 'pageview');
+
+  jQuery(function(){
+    jQuery('div.link-bar > a.donate').click(function(){
+        ga('send', 'event', 'link-bar-en', 'click', 'Bağış Yap En');
+    });
+    jQuery('div.link-bar > a.link').click(function(){
+        ga('send', 'event', 'link-bar-en', 'click', 'Hesap Numaraları En');
+    });
+
+    jQuery('.donatenow').click(function(){
+        if (window.location.pathname == "/en/orphan"){
+            ga('send', 'event', 'page-yetim-en', 'button-click', jQuery(this).text());
+
+        }
+        else if (window.location.pathname == "/en/cataract"){
+            ga('send', 'event', 'page-katarakt-en', 'button-click', jQuery(this).text());
+
+        }
+        else if (window.location.pathname == "/en/syria"){
+            ga('send', 'event', 'page-suriye-en', 'button-click', jQuery(this).text());
+
+        }
+        else if (window.location.pathname == "/en/water"){
+            ga('send', 'event', 'page-su-en', 'button-click', jQuery(this).text());
+
+        }
+        else if (window.location.href.indexOf("/ar/story") > -1){
+            ga('send', 'event', 'page-oradaydik-en' + window.location.pathname.replace("/en/story", "-"), 'button-click', jQuery(this).text());
+
+        }
+        else if (window.location.href.indexOf("/news/") > -1){
+            ga('send', 'event', 'page-haber-en' + window.location.pathname.replace("/en/news/", "-"), 'button-click', jQuery(this).text());
+
+        };
+    });
+});
+
+
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1732492536987067');
+    fbq('track', "PageView");
+
+(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter39250910 = new Ya.Metrika({ id:39250910, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script>
+
+<script src="https://admin.notificup.com/shopify/normal?site=ihh" async></script>
+
+
+<script type="text/javascript">
+    $(function () { // Same as document.addEventListener("DOMContentLoaded"...
+
+  // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
+  $("#navbarToggle").blur(function (event) {
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 768) {
+      $("#collapsable-nav").collapse('hide');
+  }
+});
+
+  // In Firefox and Safari, the click event doesn't retain the focus
+  // on the clicked button. Therefore, the blur event will not fire on
+  // user clicking somewhere else in the page and the blur event handler
+  // which is set up above will not be called.
+  // Refer to issue #28 in the repo.
+  // Solution: force focus on the element that the click event fired on
+  $("#navbarToggle").click(function (event) {
+    $(event.target).focus();
+});
+});
+</script>
+<!-- Google Tag Manager -->
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+            new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-THCGQS');
+</script>
+<!-- End Google Tag Manager -->
+</head>
+<body class="chrome" dir="ltr">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THCGQS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <a href="#" id="back-to-top" class="css-back-to-top">&uarr;</a>
+    <div id="spinwait" class="css-spinwait">
+        <div class="css-wait">Please Wait</div>
+        <div class="css-spinner">
+            <div class="css-rect1"></div>
+            <div class="css-rect2"></div>
+            <div class="css-rect3"></div>
+            <div class="css-rect4"></div>
+            <div class="css-rect5"></div>
+        </div>
+        <div class="css-lock" data-lock></div>
+    </div>
+
+    <div class="css-wrapper">
+
+        <div id="collapsable-nav" class="collapse navbar-collapse" aria-expanded="false">
+            <div class="css-header css-block">
+                <div class="css-header-top">
+                    <div class="css-header-link">
+                        <a href="/en/account-number">ACCOUNT NUMBERS</a>
+                        <a href="/en/faq">FAQ</a>
+                    </div>
+
+
+
+                    <div class="css-icon-menu" id="header-search">
+                        <span>
+                            <img class="css-svg" src="/Project/resource/svg/magnifying-glass.svg" />
+                            <img class="css-sort-down" src="/Project/resource/svg/sort-down.svg" />
+                        </span>
+                        <form action="/en/search" method="get" class="css-search-form">
+                            <input type="text" name="q" class="css-search-input" placeholder="Search" />
+                            <button><img src="/Project/resource/svg/magnifying-glass.svg" /></button>
+                        </form>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="css-languages">
+                        <a href="/">TR</a>
+                        <a href="/ar">عربي</a>
+                    </div>
+                </div>
+
+                <div class="css-header-button">
+                    <div id="header-user">
+                        <a class="css-user">LOGIN</a>
+                        <div class="css-header-div">
+                            <div><a href="/en/donor" style="background-image: url(/Project/resource/image/menu-donor.png);">Donor & Sponsor Account</a>
+                                <a href="/en/volunteer" style="background-image: url(/Project/resource/image/menu-volunteer.png);">Gönüllü Çalışmaları<br />için Özgeçmiş</a>
+                                <a href="/en/proxy" style="background-image: url(/Project/resource/image/menu-qurban.png);">Qurban Proxy Questioning</a>
+                                <a href="/en/hr" style="background-image: url(/Project/resource/image/menu-hr.png);">İnsan Kaynakları<br />için Özgeçmiş</a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="header-donate">
+                        <a href="/Project/Donation.html" class="css-donate">DONATE</a>
+                        <div class="css-header-div">
+                            <div>
+                                <a href="/en/account-number" style="background-image: url(/Project/resource/image/menu-donate.png);">Donation Channels<br />Account Numbers</a>
+                                <a href="/Project/Donation.html" style="background-image: url(/Project/resource/image/menu-online.png);">Credit / Bank Card <br /> Online Donation</a>
+                                <a href="/en/office" style="background-image: url(/Project/resource/image/menu-office.png);">Donation Acceptance Centers</a>
+                                <a href="/en/donate/orphan" style="background-image: url(/Project/resource/image/menu-sponsor.png);">Orphan Sponsorship Application</a>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="header-basket" title="Donation Cart">
+                        <a href="file:////Project/en/donate.html" class="css-basket-icon"><span>0</span></a>
+                    </div>
+                </div>
+
+                <a href="file:////Project/test.html" class="css-logo" style="background-image: url(/Project/Hayrat/logo1.png);"></a>
+
+                <div id="nav" class="css-navigation">
+                    <ul>
+                        <li>
+                            <a>Corporate</a>
+                            <div>
+                                <div class="css-table">
+                                    <div class="css-td">
+                                        <ul>
+                                            <li id="nav-1"><a href=""> The Message of the president</a></li>
+                                            <li id="nav-2"><a  href="">Our Mission and Vision</a></li>
+                                            <li id="nav-5"><a  href="">Our Goals and Strategies</a></li>
+                                            <li id="nav-7"><a  href="">Board of Directors and Auditors</a></li>
+                                            <li id="nav-6"><a  href="">Field of Activity</a></li>
+                                            <li id="nav-6"><a  href="">Income and Expense Account</a></li>
+                                            <li id="nav-6"><a  href="">Our Coordinators</a></li>
+
+                                        </ul>
+                                    </div>
+                                    <div data-nav-box class="css-td css-box">
+                                        <h3>Message</h3>
+                                        <img src="/Project/Hayrat/logoNavbar.png" />
+                                        <div>Hayrat Yardim , which was established in 2013 and received a “Public Benefit” and ni Permission to be Counted from Organizations that can Collect Assistance without Permission içerisinde in a short period of time , is waving the flag of our country and Islam all over the world. We praise our Lord, who has bestowed on these auspicious works.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a>Projects</a>
+                            <div>
+                                <div class="css-table">
+                                    <div class="css-td">
+                                        <ul>
+                                            <li id="nav-72"><a  href="">Emergency Aid</a></li>
+                                            <li id="nav-17"><a  href="">Orphan</a></li>
+                                            <li id="nav-16"><a  href="">Education</a></li>
+                                            <li id="nav-15"><a  href="">Victim</a></li>
+                                            <li id="nav-74"><a  href="">Waterwell</a></li>
+                                            <li id="nav-20"><a  href="">Ramadan</a></li>
+                                            <li id="nav-19"><a  href="">Health</a></li>
+                                            <li id="nav-21"><a  href="">Sustainable Development</a></li>
+                                        </ul>
+                                    </div>
+                                    <div data-nav-box class="css-box " id="nav-72-box">
+                                        <h3>Projects</h3>
+                                        <img src="/Project/Hayrat/ProjectsNavbar.jpeg" />
+                                        <div></div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="">Compaigns</a>
+                        </li>
+                        <li>
+                            <a href="">News</a>
+                        </li>
+                        <li>
+                            <a href="">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <button id="hamburger" class="css-hamburger css-hamburger--htx">
+                    <span>menü</span>
+                </button>
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+        <div class="swiper-container" id="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url(/Project/Hayrat/slider2.jpg);width: 100%; height: 300px;      background-size: 100% 100%;  background-size: contain;">
+
+                </div>
+                <div class="swiper-slide" style="background-image: url(/Project/Hayrat/slider1.png);width: 100%; height: 300px;      background-size: 100% 100%;  background-size: contain;">
+
+                </div>               
+            </div>
+            <div id="swiper-next" class="swiper-button-next"></div>
+            <div id="swiper-prev" class="swiper-button-prev"></div>
+        </div>
+        <ul id="slide-nav" class="css-slide-nav css-block">
+            <li class=css-selected>
+                <a>
+                    <img id="menu-yetim" src="/Project/public/menu/0/96/432824243292.png" />
+                    <span>Orphan</span>
+                </a>
+            </li>
+            <li >
+                <a>
+                    <img id="menu-su" src="/Project/public/menu/0/91/su-kuyusu-icon-1.png" />
+                    <span>Water</span>
+                </a>
+            </li>
+            <li >
+                <a>
+                    <img id="menu-zekat" src="/Project/public/menu/0/25/447944151221.png" />
+                    <span>Zakat</span>
+                </a>
+            </li>
+            <li >
+                <a>
+                    <img id="menu-gazze" src="/Project/public/menu/0/185/481227628837.png" />
+                    <span>Gaza</span>
+                </a>
+            </li>
+            
+            <li >
+                <a>
+                    <img id="menu-adak" src="/Project/public/menu/0/95/448036505168.png" />
+                    <span>Aqiqah</span>
+                </a>
+            </li>
+            <li >
+                <a>
+                    <img id="menu-kalicieserler" src="/Project/public/menu/0/92/41677586083.png" />
+                    <span>Facilities</span>
+                </a>
+            </li>
+        </ul>
+        <div class="css-clear"></div>
+
+       <!--  <ul id="slide-nav" class="css-slide-nav css-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-3 col-xxs-12">
+                        <li class=css-selected>
+                            <a>
+                                <img id="menu-yetim" src="/Project/public/menu/0/96/432824243292.png" />
+                                <span>Orphan</span>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="col-md-2 col-sm-2 col-xs-3 col-xxs-12">
+                       <li >
+                        <a>
+                            <img id="menu-su" src="/Project/public/menu/0/91/su-kuyusu-icon-1.png" />
+                            <span>Water</span>
+                        </a>
+                    </li>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-3 col-xxs-12">
+                    <li >
+                        <a>
+                            <img id="menu-zekat" src="/Project/public/menu/0/25/447944151221.png" />
+                            <span>Zakat</span>
+                        </a>
+                    </li>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-3 col-xxs-12">
+                    <li >
+                        <a>
+                            <img id="menu-gazze" src="/Project/public/menu/0/185/481227628837.png" />
+                            <span>Gaza</span>
+                        </a>
+                    </li>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-3 col-xxs-12">
+                 <li >
+                    <a>
+                        <img id="menu-adak" src="/Project/public/menu/0/95/448036505168.png" />
+                        <span>Aqiqah</span>
+                    </a>
+                </li>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-3 col-xxs-12">
+                <li >
+                    <a>
+                        <img id="menu-kalicieserler" src="/Project/public/menu/0/92/41677586083.png" />
+                        <span>Facilities</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </div>
+
+</ul>
+<div class="css-clear"></div> -->
+<div class="css-news css-block">
+    <a href="/en/news">SHOW ALL NEWS</a>
+
+    <ul id="tabs" class="css-tabs">
+        <li class="css-selected">LATEST NEWS</li>
+        <li>Emergency</li>
+        <li>Humanitarian</li>
+        <li>Human Rights</li>
+        <li>Diplomacy</li>
+    </ul>
+    <ul id="news" class="css-tabnews">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12"> <a href="" class="css-photo" style="background-image: url(/Project/Hayrat/News1.jpg) "></a></div>   
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12"> <a href="" class="css-photo" style="background-image: url(/Project/Hayrat/News2.jpg)"></a></div>   
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12"> <a href="" class="css-photo" style="background-image: url(/Project/Hayrat/News3.jpg)"></a></div>   
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12"> <a href="" class="css-photo" style="background-image: url(/Project/Hayrat/News4.jpg)"></a></div>   
+            </div>
+        </div>
+        <div class="css-clear"></div>
+
+    </ul>
+    <div class="css-clear"></div>
+</div>
+
+<!-- <div class="css-block css-split">
+    <h3><span>MEMORIES</span></h3>
+    <a href="/en/story">SEE ALL</a>
+    <div class="css-story">
+        <div>
+            <a href="" class="css-photo" style="background-image: url(/Project/Hayrat/Mem1.jpeg)">
+                <div class="css-shadow"></div>
+                <div class="css-title">Syria</div>
+            </a>
+        </div>
+        <div>
+            <a href="" class="css-photo" style="background-image: url(/Project/Hayrat/Mem2.jpeg)">
+
+                <div class="css-shadow"></div>
+                <div class="css-title">The world changes with goodness</div>
+            </a>
+        </div>
+        <div>
+            <div>
+                <a href="" class="css-photo" style="background-image: url(/Project/Hayrat/Mem3.jpeg)">
+                    <div class="css-shadow"></div>
+                    <div class="css-title">2019 Sacrifice</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="css-clear"></div>
+</div> -->
+
+
+<div class="css-block css-split">
+    <h3><span>MEMORIES</span></h3>
+    <a href="/en/story">SEE ALL</a>
+    <div class="css-story">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                    <a href="" class="css-photo1" style="background-image: url(/Project/Hayrat/Mem1.jpeg)">
+                        
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+                   <a href="" class="css-photo1" style="background-image: url(/Project/Hayrat/Mem2.jpeg)">
+
+                    
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+               <a href="" class="css-photo1" style="background-image: url(/Project/Hayrat/Mem4.jpeg)">
+                
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+               <a href="" class="css-photo1" style="background-image: url(/Project/Hayrat/Mem5.jpeg)">
+                
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="css-clear"></div>
+</div>
+
+<div class="css-push"></div>
+</div>
+
+
+
+<footer>
+    <div class="css-block">
+        <div class="css-box css-boxsms">
+            <img src="/Project/Hayrat/footlogo.png" />
+        </div>
+        <div class="css-box ">
+            <h3>Institutional</h3>
+            <ul>
+                <li><a  href="/en/account-number">Account Number</a></li>
+                <li><a  href="/en/faq">FAQ</a></li>
+                <li><a  href="/en/office">Representation</a></li>
+                <li><a  href="/en/voluntary">Voluntary</a></li>
+            </ul>
+        </div>
+        <div class="css-box css-boxcat">
+            <h3>Donate</h3>
+            <ul>
+                <li><a  href="/en/donate#emergency">Emergency Aid</a></li>
+                <li><a  href="/en/donate#orphan">Orphan Sponsorship</a></li>
+                <li><a  href="/en/donate/adaq-qurbani">Donate Adaq Qurbani</a></li>
+                <li><a  href="/en/donate/waterwells">Water Wells</a></li>
+                <li><a  href="/en/donate/zakat">Donate Zakat</a></li>
+                <li><a  href="/en/ramadan">Ramadan</a></li>
+            </ul>
+        </div>
+        <div class="css-box css-boxcat">
+            <h3>Content</h3>
+            <ul>
+                <li><a  href="/en/story">We Were There</a></li>
+                <li><a  href="/en/video">Videos</a></li>
+                <li><a  href="/en/publish">Publications</a></li>
+                <li><a  href="/en">News</a></li>
+            </ul>
+        </div>
+        <div class="css-box css-boxcontact">
+            <h3>Contact</h3>
+            <address>
+                <p><a href="tel:444 3 674"> 444 3 674</a></p>
+                <p>Fax:  0212 220 2040</p>
+                <p>info@hayratyardim.org</p>
+                <p>Yenidogan Mah. 238.Sok. No: 5/3</p>
+                <p>Zeytinburnu - Istanbul / TURKEY</p>
+            </address>
+
+            <ul class="css-socials">
+                <li><a  style="background-image: url(/Project/public/menu/0/63/40390_2563381.svg)" href="/en/"></a></li>
+                <li><a target=_blank style="background-image: url(/Project/public/menu/0/59/40253_834262.svg)" href="https://twitter.com/"></a></li>
+                <li><a target=_blank style="background-image: url(/Project/public/menu/0/60/40295_163121.svg)" href="https://www.facebook.com/"></a></li>
+            </ul>
+        </div>
+        <div class="css-clear"></div>
+    </div>
+    <div>
+
+    </div>
+</footer>
+
+<div id="warn" class="css-warn">
+    <div id="warn-lock" class="css-lock"></div>
+    <div id="warn-body" class="css-warning">
+        <div id="warn-title" class="css-title"></div>
+        <div id="warn-message" class="css-message"></div>
+        <input type="button" value="Okay" class="css-brownbutton" />
+    </div>
+</div>
+</body>
+</html>
+
+

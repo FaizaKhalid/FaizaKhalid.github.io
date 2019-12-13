@@ -1,0 +1,271 @@
+.swiper-container {
+    width: 100%;
+    height: auto;
+    /*max-width: 397;*/
+}
+
+.swiper-slide {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+    .swiper-slide .css-opacity {
+        width: 100%;
+        height: 397px;
+        position: absolute;
+    }
+
+    .swiper-slide .css-over {
+        position: absolute;
+        width: 100%;
+    }
+
+    .swiper-slide .css-cover {
+        position: absolute;
+    }
+
+        .swiper-slide .css-cover:lang(ltr) {
+            margin-left: 380px;
+        }
+
+        .swiper-slide .css-cover:lang(rtl) {
+            margin-right: 380px;
+        }
+
+    .swiper-slide .css-player {
+        background-image: url('image/player.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+    }
+
+        .swiper-slide .css-player:hover {
+            background-image: url('image/player-hover.png');
+            cursor: pointer;
+        }
+
+        .swiper-slide .css-player iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: auto;
+            border: 0;
+        }
+
+    .swiper-slide .css-cover > div:first-child {
+        width: 560px;
+        height: 315px;
+        border: solid 1px #ccc;
+        margin-top: 40px;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    .swiper-slide .css-cover .css-shadow {
+        content: ' ';
+        width: 566px;
+        height: 14px;
+        background-image: url('image/shadow.png');
+    }
+
+        .swiper-slide .css-cover .css-shadow:lang(ltr) {
+            margin-left: -3px;
+        }
+
+        .swiper-slide .css-cover .css-shadow:lang(rtl) {
+            margin-right: -3px;
+        }
+
+    .swiper-slide .css-text {
+        color: #000;
+        display: table-cell;
+        vertical-align: middle;
+        height: 397px;
+        width: 330px;
+        white-space: normal;
+    }
+
+        .swiper-slide .css-text:lang(ltr) {
+            padding-left: 10px;
+        }
+
+        .swiper-slide .css-text:lang(rtl) {
+            padding-right: 10px;
+        }
+
+    .swiper-slide .css-white {
+        color: #fff;
+    }
+
+    .swiper-slide h3 {
+        margin: 0;
+        line-height: 1.1em;
+        font-size: 2.2em !important;
+        white-space: normal;
+        margin-bottom: 10px;
+    }
+
+        .swiper-slide h3 a {
+            color: inherit;
+        }
+
+    .swiper-slide p {
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: normal;
+        padding: 2px 1px;
+    }
+
+        .swiper-slide p:lang(rtl) {
+            font-size: 17px;
+        }
+
+    .swiper-slide .css-link {
+        margin: 0;
+        margin-top: 15px;
+        font-weight: normal;
+        color: inherit;
+        border: 1px solid #000;
+        border-radius: 3px;
+        padding: 7px 15px;
+        z-index: 3;
+    }
+
+        .swiper-slide .css-link:lang(ltr) {
+            font-size: 1em;
+            margin-left: -1px;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .swiper-slide .css-link:lang(rtl) {
+            font-size: 1.1em;
+            margin-left: 10px;
+            margin-right: -1px;
+        }
+
+    .swiper-slide .css-white .css-link {
+        border-color: #fff;
+    }
+
+    .swiper-slide .css-link.css-button-donate:lang(ltr) {
+        padding-left: 35px;
+    }
+
+    .swiper-slide .css-link.css-button-donate:lang(rtl) {
+        padding-right: 35px;
+    }
+
+    .swiper-slide .css-link:hover {
+        background-color: #fff;
+    }
+
+    .swiper-slide .css-white .css-link:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
+    .swiper-slide .css-link::before {
+        background-image: url('svg/heart-shape-outline.svg') !important;
+    }
+
+    .swiper-slide .css-white .css-link::before {
+        background-image: url('svg/heart-shape-outline-white.svg') !important;
+    }
+
+    .swiper-slide .css-link:hover::before {
+        background-image: url('svg/heart-shape-silhouette-red.svg') !important;
+    }
+
+    .swiper-slide .css-passive {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+.css-slide-nav {
+    list-style: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.css-slide-nav li {
+    text-align: center;
+    padding: 0px 1%;
+}
+   
+
+        .css-slide-nav li:lang(ltr) {
+            float: left;
+            margin-left: 34px;
+        }
+
+        .css-slide-nav li:lang(rtl) {
+            float: right;
+            margin-right: 34px;
+        }
+
+        .css-slide-nav li:first-child {
+            /*margin: 0;*/
+        }
+
+        .css-slide-nav li img {
+            width: 48px;
+            height: 48px;
+            margin: 5px 5px;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        .css-slide-nav li:hover img, .css-slide-nav li.css-selected img {
+            filter: none !important;
+            -webkit-filter: grayscale(0%);
+        }
+
+        .css-slide-nav li a {
+            color: #6f716c;
+            text-decoration: none;
+        }
+
+        .css-slide-nav li span {
+            font-weight: 700;
+            text-align: center;
+            display: block;
+            font-size: 14px;
+        }
+
+            .css-slide-nav li span:lang(rtl) {
+                font-size: 17px;
+            }
+
+        .css-slide-nav li.css-selected:after {
+            z-index: 2;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            margin-top: -146px;
+            border-color: #fff;
+            border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) #f8f8f8;
+            border-width: 15px;
+        }
+
+        .css-slide-nav li.css-selected:lang(ltr)::after {
+            margin-left: -15px;
+        }
+
+        .css-slide-nav li.css-selected:lang(rtl)::after {
+            margin-right: -15px;
+        }
+
+a.css-slide {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 390px;
+    z-index: 2;
+}
